@@ -10,19 +10,25 @@ const WishCard = (props) => {
     <ul class="flex flex-col divide-y divide-gray-700">
 		<li class="flex flex-col py-6 sm:flex-row sm:justify-between">
 			<div class="flex w-full space-x-2 sm:space-x-4">
-				<img class="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src="{wish.image}" alt="{wish.title}"/>
+				<img class="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src={` ${wish.image}` } alt="{{wish.title}}"/>
 				<div class="flex flex-col justify-between w-full pb-4">
 					<div class="flex justify-between w-full pb-2 space-x-2">
 						<div class="space-y-1">
 							<h3 class="text-lg font-semibold leading-snug sm:pr-8"><Link to={`/show-wish/${wish._id}`}>{wish.title}</Link></h3>
-							<p class="text-sm dark:text-gray-400"> {wish.description}</p>
+							<p class="text-sm dark:text-gray-400">{wish.description}</p>
 						</div>
 						<div class="text-right">
 							<p class="text-lg font-semibold">{wish.price}</p>
 						</div>
 					</div>
 					<div class="flex text-sm divide-x">
-						<button type="button" class="flex items-center px-2 py-1 pl-0 space-x-1">
+          <button type="button" class="flex items-center px-2 py-1 pl-0 space-x-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
+        <span>Edit</span>
+        </button>
+            <button type="button" class="flex items-center px-2 py-1 pl-0 space-x-1">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current">
 								<path d="M96,472a23.82,23.82,0,0,0,23.579,24H392.421A23.82,23.82,0,0,0,416,472V152H96Zm32-288H384V464H128Z"></path>
 								<rect width="32" height="200" x="168" y="216"></rect>

@@ -17,6 +17,9 @@ const WishSchema = new mongoose.Schema({
   price: {
     type: String
   },
+  link: {
+    type: String
+  },
   updated_date: {
     type: Date,
     default: Date.now
