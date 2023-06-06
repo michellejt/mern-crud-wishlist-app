@@ -10,7 +10,7 @@ import ShowWishList from './components/ShowWishList';
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className='flex flex-col place-content-center items-center'>
         <Routes>
           <Route exact path='/' element={<ShowWishList />} />
           <Route path='/create-wish' element={<CreateWish />} />
