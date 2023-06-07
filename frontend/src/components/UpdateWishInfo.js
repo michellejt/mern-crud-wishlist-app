@@ -23,6 +23,7 @@ function UpdateWishInfo(props) {
         setWish({
           title: res.data.title,
           image: res.data.image,
+          link: res.data.link,
           description: res.data.description,
           price: res.data.price,
         });
@@ -42,6 +43,7 @@ function UpdateWishInfo(props) {
     const data = {
       title: wish.title,
       image: wish.image,
+      link: wish.link,
       description: wish.description,
       price: wish.price,
     };
@@ -59,19 +61,19 @@ function UpdateWishInfo(props) {
   return (
 
 
-<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
-<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+<div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-<div class="fixed inset-0 z-10 overflow-y-auto">
-  <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+<div className="fixed inset-0 z-10 overflow-y-auto">
+  <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
 
-    <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+    <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+      <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
 
-          <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+          <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
           <h3 className='display-4 text-center'>Edit Wish</h3>
-            <div class="mt-2">
+            <div className="mt-2">
             
 
           <form noValidate onSubmit={onSubmit}>
@@ -113,7 +115,19 @@ function UpdateWishInfo(props) {
               />
             </div>
             <br />
+            <br />
 
+            <div className='form-group'>
+              <label htmlFor='link'>link</label>
+              <input
+                type='text'
+                placeholder='link'
+                name='link'
+                className='form-control'
+                value={wish.link}
+                onChange={onChange}
+              />
+            </div>
             <div className='form-group'>
               <label htmlFor='publisher'>price</label>
               <input
@@ -137,7 +151,7 @@ function UpdateWishInfo(props) {
           </div>
         </div>
       </div>
-      <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+      <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
       <Link to='/' className='btn btn-outline-warning float-left'>
               Cancel
             </Link>

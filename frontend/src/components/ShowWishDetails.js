@@ -53,6 +53,11 @@ function ShowWishDetails(props) {
             <td>{wish.description}</td>
           </tr>
           <tr>
+            <th scope='row'>3</th>
+            <td>link</td>
+            <td>{wish.link}</td>
+          </tr>
+          <tr>
             <th scope='row'>4</th>
             <td>price</td>
             <td>{wish.price}</td>

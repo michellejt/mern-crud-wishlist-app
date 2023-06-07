@@ -32,6 +32,7 @@ const CreateWish = (props) => {
         setWish({
           title: '',
           image: '',
+          link: '',
           description: '',
           price: '',
         });
@@ -75,7 +76,7 @@ const CreateWish = (props) => {
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='IMAGE'
+                  placeholder='image'
                   name='image'
                   className='form-control'
                   value={wish.image}
@@ -97,10 +98,10 @@ const CreateWish = (props) => {
               <div className='form-group'>
                 <input
                   type='text'
-                  placeholder='Describe this wish'
+                  placeholder='link to site'
                   name='description'
                   className='form-control'
-                  value={wish.description}
+                  value={wish.link}
                   onChange={onChange}
                 />
               </div>
