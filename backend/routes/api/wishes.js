@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Load Wish model
-const Wish = require('../../models/Wishes');
+const Wish = require('../../models/wishes');
 
 // @route GET api/wishes/test
 // @description tests wishes route

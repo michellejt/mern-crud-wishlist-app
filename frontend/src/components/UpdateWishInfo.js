@@ -55,22 +55,23 @@ function UpdateWishInfo(props) {
   };
 
   return (
-    <div className='UpdateWishInfo'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-8 m-auto'>
-            <br />
-            <Link to='/' className='btn btn-outline-warning float-left'>
-              Show Wish List
-            </Link>
-          </div>
-          <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Edit Wish</h1>
-            <p className='lead text-center'>Update Wish</p>
-          </div>
-        </div>
 
-        <div className='col-md-8 m-auto'>
+
+<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+
+<div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+
+<div class="fixed inset-0 z-10 overflow-y-auto">
+  <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+    <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+      <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+
+          <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+          <h3 className='display-4 text-center'>Edit Wish</h3>
+            <div class="mt-2">
+            
+
           <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
               <label htmlFor='title'>Title</label>
@@ -124,16 +125,31 @@ function UpdateWishInfo(props) {
             </div>
             <br />
 
+          </form>
+
+      </div>
+    </div>
+            
+       
+
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+      <Link to='/' className='btn btn-outline-warning float-left'>
+              Cancel
+            </Link>
             <button
               type='submit'
               className='btn btn-outline-info btn-lg btn-block'
             >
               Update Wish
             </button>
-          </form>
-        </div>
       </div>
     </div>
+  </div>
+
+
   );
 }
 
