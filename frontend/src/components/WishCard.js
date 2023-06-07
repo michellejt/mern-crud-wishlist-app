@@ -14,7 +14,7 @@ const WishCard = (props) => {
 				<div className="flex flex-col justify-between w-full pb-4">
 					<div className="flex justify-between w-full pb-2 space-x-2">
 						<div className="space-y-1">
-							<h3 className="text-lg font-semibold leading-snug sm:pr-8"><Link to={`{wish.link}`}>{wish.title}</Link></h3>
+							<h3 className="text-lg font-semibold leading-snug sm:pr-8"><Link to={wish.link}>{wish.title}</Link></h3>
 							<p className="text-sm dark:text-gray-400">{wish.description}</p>
 						</div>
 						<div className="text-right">

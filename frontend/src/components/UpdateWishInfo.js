@@ -3,8 +3,6 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-import { URL } from "../App"
-
 function UpdateWishInfo(props) {
   const [wish, setWish] = useState({
     title: '',
@@ -18,7 +16,7 @@ function UpdateWishInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`${URL}/api/wishes/${id}`)
+      .get(`http://localhost:8082/api/wishes/${id}`)
       .then((res) => {
         setWish({
           title: res.data.title,
@@ -49,7 +47,7 @@ function UpdateWishInfo(props) {
     };
 
     axios
-      .put(`${URL}/api/wishes/${id}`, data)
+      .put(`http://localhost:8082/api/wishes/${id}`, data)
       .then((res) => {
         navigate(`/show-wish/${id}`);
       })
@@ -59,23 +57,22 @@ function UpdateWishInfo(props) {
   };
 
   return (
+    <div className='UpdateWishInfo'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-8 m-auto'>
+            <br />
+            <Link to='/' className='btn btn-outline-warning float-left'>
+              Show Wish List
+            </Link>
+          </div>
+          <div className='col-md-8 m-auto'>
+            <h1 className='display-4 text-center'>Edit Wish</h1>
+            <p className='lead text-center'>Update Wish</p>
+          </div>
+        </div>
 
-
-<div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-
-<div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
-<div className="fixed inset-0 z-10 overflow-y-auto">
-  <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-    <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-      <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-
-          <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-          <h3 className='display-4 text-center'>Edit Wish</h3>
-            <div className="mt-2">
-            
-
+        <div className='col-md-8 m-auto'>
           <form noValidate onSubmit={onSubmit}>
             <div className='form-group'>
               <label htmlFor='title'>Title</label>
@@ -85,6 +82,18 @@ function UpdateWishInfo(props) {
                 name='title'
                 className='form-control'
                 value={wish.title}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className='form-group'>
+              <label htmlFor='link'>link</label>
+              <input
+                type='text'
+                placeholder='link'
+                name='link'
+                className='form-control'
+                value={wish.link}
                 onChange={onChange}
               />
             </div>
@@ -102,6 +111,7 @@ function UpdateWishInfo(props) {
               />
             </div>
             <br />
+            
 
             <div className='form-group'>
               <label htmlFor='description'>description</label>
@@ -115,19 +125,7 @@ function UpdateWishInfo(props) {
               />
             </div>
             <br />
-            <br />
 
-            <div className='form-group'>
-              <label htmlFor='link'>link</label>
-              <input
-                type='text'
-                placeholder='link'
-                name='link'
-                className='form-control'
-                value={wish.link}
-                onChange={onChange}
-              />
-            </div>
             <div className='form-group'>
               <label htmlFor='publisher'>price</label>
               <input
@@ -141,31 +139,16 @@ function UpdateWishInfo(props) {
             </div>
             <br />
 
-          </form>
-
-      </div>
-    </div>
-            
-       
-
-          </div>
-        </div>
-      </div>
-      <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-      <Link to='/' className='btn btn-outline-warning float-left'>
-              Cancel
-            </Link>
             <button
               type='submit'
               className='btn btn-outline-info btn-lg btn-block'
             >
               Update Wish
             </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-
-
   );
 }
 
