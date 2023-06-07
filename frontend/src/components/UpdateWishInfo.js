@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
+import { URL } from "../App"
+
 function UpdateWishInfo(props) {
   const [wish, setWish] = useState({
     title: '',
@@ -16,7 +18,7 @@ function UpdateWishInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/wishes/${id}`)
+      .get(`${URL}/api/wishes/${id}`)
       .then((res) => {
         setWish({
           title: res.data.title,
@@ -45,7 +47,7 @@ function UpdateWishInfo(props) {
     };
 
     axios
-      .put(`http://localhost:8082/api/wishes/${id}`, data)
+      .put(`${URL}/api/wishes/${id}`, data)
       .then((res) => {
         navigate(`/show-wish/${id}`);
       })

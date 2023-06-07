@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
 
+import { URL } from "../App"
+
 const CreateWish = (props) => {
   // Define the state with useState hook
   const navigate = useNavigate();
@@ -23,8 +25,9 @@ const CreateWish = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
+
     axios
-      .post('http://localhost:8082/api/wishes', wish)
+      .post(`${URL}/api/wishes`, wish)
       .then((res) => {
         setWish({
           title: '',

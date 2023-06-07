@@ -3,6 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
+import { URL } from "../App"
+
 function ShowWishDetails(props) {
   const [wish, setWish] = useState({});
 
@@ -11,7 +13,7 @@ function ShowWishDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/wishes/${id}`)
+      .get(`${URL}/api/wishes/${id}`)
       .then((res) => {
         setWish(res.data);
       })
@@ -22,7 +24,7 @@ function ShowWishDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:8082/api/wishes/${id}`)
+      .delete(`${URL}/api/wishes/${id}`)
       .then((res) => {
         navigate('/');
       })

@@ -4,14 +4,16 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import WishCard from './WishCard';
 
+import { URL } from "../App"
+
 function ShowWishList() {
   const [wishes, setWishes] = useState([]);
 
-
+  
 
   useEffect(() => {
     axios
-      .get('http://localhost:8082/api/wishes')
+      .get(`${URL}/api/wishes`)
       .then((res) => {
         setWishes(res.data);
       })

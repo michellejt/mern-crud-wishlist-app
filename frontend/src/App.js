@@ -7,6 +7,8 @@ import ShowWishDetails from './components/ShowWishDetails';
 import UpdateWishInfo from './components/UpdateWishInfo';
 import ShowWishList from './components/ShowWishList';
 
+export const URL = process.env.REACT_APP_SERVER_URL
+
 const App = () => {
   return (
     <Router>
